@@ -1,0 +1,19 @@
+@import "./variables.scss";
+
+.page__wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: $page__wrapper;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+    .calculator__wrapper {
+      background-color: $calc__background;
+      width: 400px;
+      height: 600px;
+    }
+
+
+
+}
