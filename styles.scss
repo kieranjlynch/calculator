@@ -1,5 +1,10 @@
 @import "./variables.scss";
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .page__wrapper {
   width: 100%;
   height: 100%;
@@ -9,9 +14,50 @@
   justify-content: center;
 
     .calculator__wrapper {
-      background-color: $calc__background;
-      width: 400px;
+      margin-top: 100px;
+      background: $calc__background;
+      color: $display__text;
       height: 600px;
+      padding: 20px;
+      position: relative;
+      width: 400px;
+
+      .wrapper__display {
+        font-size: 130px;
+        font-weight: 300;
+        height: 158px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        text-align: right;
+      }
+
+      .wrapper__buttons {
+        align-items: center;
+        background: #333;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        font-size: 45px;
+        height: 110px;
+        justify-content: center;
+        transition: filter .3s;
+        width: 110px;
+
+        .operator--button {
+          background-color: $operator__button;
+        }
+      }
+
+      .calculator__bottom {
+        width: 33%;
+        height: 4px;
+        background: white;
+        border-radius: 4px;
+        bottom: 10px;
+        left: 33%;
+        position: absolute;
+      }
+
     }
 
 
