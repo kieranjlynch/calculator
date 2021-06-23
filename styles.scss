@@ -1,4 +1,6 @@
 @import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 * {
   padding: 0;
@@ -14,39 +16,89 @@
   justify-content: center;
 
     .calculator__wrapper {
-      margin-top: 50px;
+      margin-top: 20px;
       background: $calc__background;
       color: $display__text;
-      height: 600px;
+      height: 630px;
       padding: 20px;
       position: relative;
       width: 400px;
+      font-family: 'Open Sans', sans-serif;
 
       .wrapper__display {
-        font-size: 130px;
-        font-weight: 300;
-        height: 158px;
-        margin-bottom: 20px;
-        margin-right: 20px;
-        text-align: right;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        height: 80px;
+        margin: 10px 10px 20px 10px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 78px;
       }
 
       .wrapper__buttons {
         display: grid;
+        grid-gap: 15px;
         grid-template-columns: repeat(4, 1fr);
-        column-gap: 80px;
-        row-gap: 50px;
-        background: #333;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 45px;
-        height: 110px;
-        transition: filter .3s;
-        width: 110px;
+        grid-template-rows: repeat(5, 1fr);
+        font-family: 'Open Sans', sans-serif;
 
-        .operator--button {
-          background-color: $operator__button;
+        .button {
+          display: flex;
+          font-size: 40px;
+          height: 80px;
+          width: 80px;
+          align-items: center;
+          justify-content: center;
+          transition: filter .3s;
+          background: $wrapper__buttons;
+          border-radius: 50%;
+          cursor: pointer;
         }
+
+          .button--divide {
+           background-color: $operator__button;
+          }
+
+          .button--multiply {
+            background-color: $operator__button;
+          }
+
+          .button--minus {
+            background-color: $operator__button;
+          }
+
+          .button--plus {
+            background-color: $operator__button;
+          }
+
+          .button--equals {
+            background-color: $operator__button;
+          }
+
+          .zero {
+            grid-column: 1 / span 2;
+            width: 160px;
+            border-radius: 55px;
+            padding-left: 28px;
+            justify-content: flex-start;
+          }
+
+          .clear {
+            background-color: $function__button;
+            color: black;
+          }
+
+          .plusminus {
+            background-color: $function__button;
+            color: black;
+          }
+
+          .percent {
+            background-color: $function__button;
+            color: black;
+          }
+
+
       }
 
       .calculator__bottom {

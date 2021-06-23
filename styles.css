@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -12,37 +14,76 @@
   justify-content: center;
 }
 .page__wrapper .calculator__wrapper {
-  margin-top: 50px;
+  margin-top: 20px;
   background: black;
   color: white;
-  height: 600px;
+  height: 630px;
   padding: 20px;
   position: relative;
   width: 400px;
+  font-family: "Open Sans", sans-serif;
 }
 .page__wrapper .calculator__wrapper .wrapper__display {
-  font-size: 130px;
-  font-weight: 300;
-  height: 158px;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 80px;
+  margin: 10px 10px 20px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 78px;
 }
 .page__wrapper .calculator__wrapper .wrapper__buttons {
   display: grid;
+  grid-gap: 15px;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 80px;
-  row-gap: 50px;
+  grid-template-rows: repeat(5, 1fr);
+  font-family: "Open Sans", sans-serif;
+}
+.page__wrapper .calculator__wrapper .wrapper__buttons .button {
+  display: flex;
+  font-size: 40px;
+  height: 80px;
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.3s;
   background: #333;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 45px;
-  height: 110px;
-  transition: filter 0.3s;
-  width: 110px;
 }
-.page__wrapper .calculator__wrapper .wrapper__buttons .operator--button {
+.page__wrapper .calculator__wrapper .wrapper__buttons .button--divide {
   background-color: #f1a33c;
+}
+.page__wrapper .calculator__wrapper .wrapper__buttons .button--multiply {
+  background-color: #f1a33c;
+}
+.page__wrapper .calculator__wrapper .wrapper__buttons .button--minus {
+  background-color: #f1a33c;
+}
+.page__wrapper .calculator__wrapper .wrapper__buttons .button--plus {
+  background-color: #f1a33c;
+}
+.page__wrapper .calculator__wrapper .wrapper__buttons .button--equals {
+  background-color: #f1a33c;
+}
+.page__wrapper .calculator__wrapper .wrapper__buttons .zero {
+  grid-column: 1/span 2;
+  width: 160px;
+  border-radius: 55px;
+  padding-left: 28px;
+  justify-content: flex-start;
+}
+.page__wrapper .calculator__wrapper .wrapper__buttons .clear {
+  background-color: #a5a5a5;
+  color: black;
+}
+.page__wrapper .calculator__wrapper .wrapper__buttons .plusminus {
+  background-color: #a5a5a5;
+  color: black;
+}
+.page__wrapper .calculator__wrapper .wrapper__buttons .percent {
+  background-color: #a5a5a5;
+  color: black;
 }
 .page__wrapper .calculator__wrapper .calculator__bottom {
   width: 33%;
