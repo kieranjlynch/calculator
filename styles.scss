@@ -53,34 +53,43 @@
           background: $wrapper__buttons;
           border-radius: 50%;
           cursor: pointer;
+          border: 0;
+          box-shadow: none;
+          color: white;
         }
 
           .button--divide {
            background-color: $operator__button;
+           color: white;
           }
 
           .button--multiply {
             background-color: $operator__button;
+            color: white;
           }
 
           .button--minus {
             background-color: $operator__button;
+            color: white;
           }
 
           .button--plus {
             background-color: $operator__button;
+            color: white;
           }
 
           .button--equals {
             background-color: $operator__button;
+            color: white;
           }
 
           .zero {
             grid-column: 1 / span 2;
-            width: 160px;
+            width: 180px;
             border-radius: 55px;
             padding-left: 28px;
             justify-content: flex-start;
+            color: white;
           }
 
           .clear {

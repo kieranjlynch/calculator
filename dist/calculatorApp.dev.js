@@ -22,6 +22,10 @@ var decimalButton = document.querySelector(".decimal");
 var equalsButton = document.querySelector(".button--equals");
 var calcDisplay = document.querySelector(".wrapper__display");
 var numbersArr = [clearButton, plusminusButton, percentButton, divideButton, sevenButton, eightButton, nineButton, multiplyButton, fourButton, fiveButton, sixButton, minusButton, oneButton, twoButton, threeButton, additionButton, zeroButton, decimalButton, equalsButton];
+console.log(numbersArr);
+var clearClicked = clearButton.addEventListener("click", function (e) {
+  calcDisplay.innerHTML = "";
+});
 var percentClicked = percentButton.addEventListener("click", function (e) {
   calcDisplay.innerHTML = percentButton.innerHTML;
 });

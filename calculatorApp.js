@@ -25,6 +25,12 @@ const numbersArr = [
   minusButton, oneButton, twoButton, threeButton, additionButton, zeroButton, 
   decimalButton, equalsButton
 ]
+console.log(numbersArr);
+
+
+const clearClicked = clearButton.addEventListener("click", (e) => {
+  calcDisplay.innerHTML = ""
+});
 
 const percentClicked = percentButton.addEventListener("click", (e) => {
   calcDisplay.innerHTML = percentButton.innerHTML

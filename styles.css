@@ -50,28 +50,37 @@
   background: #333;
   border-radius: 50%;
   cursor: pointer;
+  border: 0;
+  box-shadow: none;
+  color: white;
 }
 .page__wrapper .calculator__wrapper .wrapper__buttons .button--divide {
   background-color: #f1a33c;
+  color: white;
 }
 .page__wrapper .calculator__wrapper .wrapper__buttons .button--multiply {
   background-color: #f1a33c;
+  color: white;
 }
 .page__wrapper .calculator__wrapper .wrapper__buttons .button--minus {
   background-color: #f1a33c;
+  color: white;
 }
 .page__wrapper .calculator__wrapper .wrapper__buttons .button--plus {
   background-color: #f1a33c;
+  color: white;
 }
 .page__wrapper .calculator__wrapper .wrapper__buttons .button--equals {
   background-color: #f1a33c;
+  color: white;
 }
 .page__wrapper .calculator__wrapper .wrapper__buttons .zero {
   grid-column: 1/span 2;
-  width: 160px;
+  width: 180px;
   border-radius: 55px;
   padding-left: 28px;
   justify-content: flex-start;
+  color: white;
 }
 .page__wrapper .calculator__wrapper .wrapper__buttons .clear {
   background-color: #a5a5a5;
