@@ -1,10 +1,8 @@
-//declared a const equal to the div containing all the buttons 
-const btnClicked = document.querySelector(".wrapper__buttons");
+// //declared a var equal to the div containing all the buttons 
+const wrapperBtns = document.querySelector(".wrapper__buttons")
 
-// added an eventlistener to the btnClicked variable, 
-// if the click matches a class of button, then the value of the button is saved in sessionStorage
-btnClicked.addEventListener("click", e => {
- if (e.target.matches("button")) {
-   "button".value = sessionStorage.setItem("buttonValue", "button".value);
- }
-});
+// added an eventlistener to the btnClicked variable, in the arrow function i used event.target to get the info about what value is being clicked
+wrapperBtns.addEventListener("click", event => {
+const btnClicked = event.target
+const clickedValue = btnClicked.textContent
+})

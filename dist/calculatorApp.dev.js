@@ -1,11 +1,9 @@
 "use strict";
 
-//declared a const equal to the div containing all the buttons 
-var btnClicked = document.querySelector(".wrapper__buttons"); // added an eventlistener to the btnClicked variable, 
-// if the click matches a class of button, then the value of the button is saved in sessionStorage
+// //declared a var equal to the div containing all the buttons 
+var wrapperBtns = document.querySelector(".wrapper__buttons"); // added an eventlistener to the btnClicked variable, in the arrow function i used event.target to get the info about what value is being clicked
 
-btnClicked.addEventListener("click", function (e) {
-  if (e.target.matches("button")) {
-    "button".value = sessionStorage.setItem("buttonValue", "button".value);
-  }
+wrapperBtns.addEventListener("click", function (event) {
+  var btnClicked = event.target;
+  var clickedValue = btnClicked.textContent;
 });
