@@ -18,7 +18,7 @@ display.textContent = clickedValue
 if (displayedValue == 0) {
 display.textContent = clickedValue
 } else {
-  //concatanate the values
+  //concatenate the values
   display.textContent = displayedValue + clickedValue
 }
 
