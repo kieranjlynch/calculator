@@ -1,41 +1,53 @@
 "use strict";
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+//global variables
+var calculator = document.querySelector('.calculator');
+var btns = calculator.querySelector('.calculator__buttons');
+var display = calculator.querySelector('.calculator__display');
+btns.addEventListener('click', function (event) {
+  if (!event.target.closest('button')) return;
+  var key = event.target;
+  var keyValue = key.textContent;
+  var displayValue = display.textContent;
+  var type = key.dataset.type;
+  var previousKeyType = calculator.dataset.previousKeyType; //checks whether the button pressed is a number
 
-//declared a global var equal to the div containing all the buttons 
-var wrapperBtns = document.querySelector(".wrapper__buttons"); // declared a global var which targets the div for the display
-
-var display = document.querySelector(".wrapper__display"); // added an eventlistener to the btnClicked variable, 
-
-wrapperBtns.addEventListener("click", function (event) {
-  //used event.target to get the info about what value is being clicked
-  var btnClicked = event.target; //set the value of clickedValue to be equal to the button being clicked
-
-  var clickedValue = btnClicked.textContent;
-  var displayedValue = display.textContent; //var to replace btnClicked.dataset.type
-
-  var type = btnClicked.dataset.type;
-  var previousBtnType = wrapperBtns.dataset.previousBtnType; // inputs the displayed value into the display div
-
-  display.textContent = clickedValue; // checks if the button is a number
-
-  if (type == "number") {
-    // if displayed value is zero, replace it with the button value, if it's a number
-    if (displayedValue == 0) {
-      display.textContent = clickedValue;
-    } // else if to refresh the display if the previous btn was an operator
-    else if (previousBtnType == "operator") {
-        display.textContent = clickedValue;
-      } else {
-        //concatenate the values
-        display.textContent = displayedValue + clickedValue;
-      }
-  } // checks if the button is an operator
-  // checks if the button being clicked has a custom atttribute "dataset" in the html
+  if (type === 'number') {
+    if (displayValue === '0' || previousKeyType === 'operator') {
+      display.textContent = keyValue;
+    } else {
+      display.textContent = displayValue + keyValue;
+    }
+  } //checks whether the button pressed is an operator
 
 
-  if (type = (_readOnlyError("type"), "operator")) {
-    console.log(btnClicked);
-    document.dataset.previousBtnType = "operator";
+  if (type === 'operator') {
+    calculator.dataset.firstNumber = displayValue;
+    calculator.dataset.operator = key.dataset.key;
+  } // Perform the calculation
+
+
+  if (type === 'equal') {
+    var firstNumber = calculator.dataset.firstNumber;
+    var secondNumber = displayValue;
+    var operator = calculator.dataset.operator;
+    display.textContent = calculate(firstNumber, operator, secondNumber);
   }
+
+  if (type === 'clear') {
+    display.textContent = '0';
+    delete calculator.dataset.firstNumber;
+    delete calculator.dataset.operator;
+  }
+
+  calculator.dataset.previousKeyType = type;
 });
+
+function calculate(firstNumber, operator, secondNumber) {
+  firstNumber = Int(firstNumber);
+  secondNumber = secondNumber;
+  if (operator === 'plus') return firstNumber + secondNumber;
+  if (operator === 'minus') return firstNumber - secondNumber;
+  if (operator === 'times') return firstNumber * secondNumber;
+  if (operator === 'divide') return firstNumber / secondNumber;
+}
