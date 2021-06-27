@@ -11,12 +11,22 @@ wrapperBtns.addEventListener("click", function (event) {
   var clickedValue = btnClicked.textContent;
   var displayedValue = display.textContent; // inputs the displayed value into the display div
 
-  display.textContent = clickedValue; // if displayed value is zero, replace it with the button value, if it's a number
+  display.textContent = clickedValue; // checks if the button is a number
 
-  if (displayedValue == 0) {
-    display.textContent = clickedValue;
-  } else {
-    //concatenate the values
-    display.textContent = displayedValue + clickedValue;
+  if (btnClicked.classlist.contains(".number")) {
+    // if displayed value is zero, replace it with the button value, if it's a number
+    if (displayedValue == 0) {
+      display.textContent = clickedValue;
+    } else {
+      //concatenate the values
+      display.textContent = displayedValue + clickedValue;
+    }
+  } // checks if the button is an operator
+  // checks if the button being clicked has a dataset of operator in the html
+
+
+  if (btnClicked.dataset.type(".operator")) {
+    console.log(btnClicked);
+    document.dataset.previousKeyType = "operator";
   }
 });
