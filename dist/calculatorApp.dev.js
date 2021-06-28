@@ -26,20 +26,13 @@ btns.addEventListener("click", function (event) {
 
   if (type === "operator") {
     firstNumber = displayValue;
-    operator = key;
-    console.log(operator);
+    operator = key.dataset.operator;
   } //checks whether the button pressed is equals
 
 
   if (type === "equal") {
-    console.log(firstNumber);
     var secondNumber = displayValue;
-    console.log(secondNumber);
-    operator = key.dataset.operator;
-    console.log(key);
-    console.log(operator);
     display.textContent = calculate(firstNumber, operator, secondNumber);
-    console.log(calculate(firstNumber, operator, secondNumber));
   } // resets the display back to zero
 
 
@@ -55,6 +48,6 @@ function calculate(firstNumber, operator, secondNumber) {
   secondNumber = parseInt(secondNumber);
   if (operator === "plus") return firstNumber + secondNumber;
   if (operator === "minus") return firstNumber - secondNumber;
-  if (operator === "times") return firstNumber * secondNumber;
+  if (operator === "multiply") return firstNumber * secondNumber;
   if (operator === "divide") return firstNumber / secondNumber;
 }
