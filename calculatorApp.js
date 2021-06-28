@@ -1,11 +1,14 @@
 //global variables
-const calculator = document.querySelector('.calculator');
-const btns = calculator.querySelector('.calculator__buttons');
-const display = calculator.querySelector('.calculator__display');
+const calculator = document.querySelector(".calculator");
+const btns = calculator.querySelector(".calculator__buttons");
+const display = calculator.querySelector(".calculator__display");
+let firstNumber = "";
+let operator = "";
 
-btns.addEventListener('click', event => {
-  if (!event.target.closest('button')) return
+btns.addEventListener("click", event => {
+  if (!event.target.closest("button")) return
 
+  //local variables
   const key = event.target;
   const keyValue = key.textContent;
   const displayValue = display.textContent;
@@ -13,10 +16,10 @@ btns.addEventListener('click', event => {
   const { previousKeyType } = calculator.dataset;
 
   //checks whether the button pressed is a number
-  if (type === 'number') {
+  if (type === "number") {
     if (
-      displayValue === '0' ||
-      previousKeyType === 'operator'
+      displayValue === "0" ||
+      previousKeyType === "operator"
     ) {
       display.textContent = keyValue;
     } else {
@@ -25,33 +28,36 @@ btns.addEventListener('click', event => {
   }
 
    //checks whether the button pressed is an operator
-  if (type === 'operator') {
-    calculator.dataset.firstNumber = displayValue
-    calculator.dataset.operator = key.dataset.key
+  if (type === "operator") {
+    firstNumber = displayValue;
+    operator = key;
+    console.log(operator);
   }
 
-      // Perform the calculation
-  if (type === 'equal') {
-    const firstNumber = calculator.dataset.firstNumber;
+  //checks whether the button pressed is equals
+  if (type === "equal") {
+    console.log(firstNumber);
     const secondNumber = displayValue;
-    const operator = calculator.dataset.operator;
+    console.log(secondNumber);
+    operator = key.dataset.operator;
+    console.log(key);
+    console.log(operator);
     display.textContent = calculate(firstNumber, operator, secondNumber);
+    console.log(calculate(firstNumber, operator, secondNumber));
   }
-
-  if (type === 'clear') {
-    display.textContent = '0';
-    delete calculator.dataset.firstNumber;
-    delete calculator.dataset.operator;
+// resets the display back to zero
+  if (type === "clear") {
+    display.textContent = "0";
   }
-
   calculator.dataset.previousKeyType = type;
 })
+     // Performs the calculation
 
 function calculate (firstNumber, operator, secondNumber) {
-  firstNumber = Int(firstNumber);
-  secondNumber = (secondNumber);
-  if (operator === 'plus') return firstNumber + secondNumber;
-  if (operator === 'minus') return firstNumber - secondNumber;
-  if (operator === 'times') return firstNumber * secondNumber;
-  if (operator === 'divide') return firstNumber / secondNumber;
+  firstNumber = parseInt(firstNumber);
+  secondNumber = parseInt(secondNumber);
+  if (operator === "plus") return firstNumber + secondNumber;
+  if (operator === "minus") return firstNumber - secondNumber;
+  if (operator === "times") return firstNumber * secondNumber;
+  if (operator === "divide") return firstNumber / secondNumber;
 }
