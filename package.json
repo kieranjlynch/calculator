@@ -1,0 +1,24 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "This work was during week 3 of the bootcamp, our requirements were as follows",
+  "main": "calculatorApp.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^8.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kieranjlynch/calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kieranjlynch/calculator/issues"
+  },
+  "homepage": "https://github.com/kieranjlynch/calculator#readme"
+}
