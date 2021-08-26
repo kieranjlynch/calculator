@@ -10,10 +10,8 @@ describe('Basic operator tests', function () {
     cy.get('[data-cy=one]').click();
     cy.get('[data-cy=equals]').click(); // assert
 
-    cy.get(["data-cy=display"]).should("have.value", 2);
+    cy.get('[data-cy=display]').should("have.text", 2);
   });
-});
-describe('Basic operator tests', function () {
   it('Should check 9 / 1 equals', function () {
     // arrange  
     cy.visit("http://127.0.0.1:5502/index.html"); //act
@@ -23,10 +21,8 @@ describe('Basic operator tests', function () {
     cy.get('[data-cy=one]').click();
     cy.get('[data-cy=equals]').click(); // assert
 
-    cy.get(["data-cy=display"]).should("have.value", 9);
+    cy.get('[data-cy=display]').should("have.text", 9);
   });
-});
-describe('Basic operator tests', function () {
   it('Should check 1 - 1 equals', function () {
     // arrange  
     cy.visit("http://127.0.0.1:5502/index.html"); //act
@@ -34,12 +30,10 @@ describe('Basic operator tests', function () {
     cy.get('[data-cy=one]').click();
     cy.get('[data-cy=minus]').click();
     cy.get('[data-cy=one]').click();
-    cy.get('[data-cy=equals]').click(); // assert
+    cy.get('[data-cy=equals]').click(); //assert
 
-    cy.get(["data-cy=display"]).should("have.value", 0);
+    cy.get('[data-cy=display]').should("have.text", 0);
   });
-});
-describe('Basic operator tests', function () {
   it('Should check 2 * 5 equals', function () {
     // arrange  
     cy.visit("http://127.0.0.1:5502/index.html"); //act
@@ -49,10 +43,8 @@ describe('Basic operator tests', function () {
     cy.get('[data-cy=five]').click();
     cy.get('[data-cy=equals]').click(); // assert
 
-    cy.get(["data-cy=display"]).should("have.value", 10);
+    cy.get('[data-cy=display]').should("have.text", 10);
   });
-});
-describe('Basic operator tests', function () {
   it('Should check 20 + 30 equals', function () {
     // arrange  
     cy.visit("http://127.0.0.1:5502/index.html"); //act
@@ -64,10 +56,8 @@ describe('Basic operator tests', function () {
     cy.get('[data-cy=zero]').click();
     cy.get('[data-cy=equals]').click(); // assert
 
-    cy.get(["data-cy=display"]).should("have.value", 50);
+    cy.get('[data-cy=display]').should("have.text", 50);
   });
-});
-describe('Basic operator tests', function () {
   it('Should check 20 - 10 equals', function () {
     // arrange  
     cy.visit("http://127.0.0.1:5502/index.html"); //act
@@ -79,6 +69,6 @@ describe('Basic operator tests', function () {
     cy.get('[data-cy=zero]').click();
     cy.get('[data-cy=equals]').click(); // assert
 
-    cy.get(["data-cy=display"]).should("have.value", 10);
+    cy.get('[data-cy=display]').should("have.text", 10);
   });
 });
