@@ -7,110 +7,111 @@
   margin: 0;
 }
 
-.page__wrapper {
-  width: 100%;
-  height: 100%;
-  background-color: $page__wrapper;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .page__wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: $page__wrapper;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .calculator {
-      margin-top: 20px;
-      background: $calc__background;
-      color: $display__text;
-      height: 630px;
-      padding: 20px;
-      position: relative;
-      width: 400px;
-      font-family: 'Open Sans', sans-serif;
-
-      .calculator__display {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-        height: 80px;
-        margin: 10px 10px 20px 10px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 78px;
-      }
-
-      .calculator__buttons {
-        display: grid;
-        grid-gap: 15px;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+      .calculator {
+        background: $calc__background;
+        color: $display__text;
+        height: 100%;
+        padding: 20px;
+        width: 100%;
         font-family: 'Open Sans', sans-serif;
 
-        .button {
+        .calculator__display {
           display: flex;
-          font-size: 40px;
-          height: 80px;
-          width: 80px;
-          align-items: center;
-          justify-content: center;
-          transition: filter .3s;
-          background: $wrapper__buttons;
-          border-radius: 50%;
-          cursor: pointer;
-          border: 0;
-          box-shadow: none;
-          color: white;
+          align-items: flex-end;
+          justify-content: flex-end;
+          height: 6vh;
+          margin-top: 6vh;
+          margin-bottom: 6vh;
+          font-family: 'Roboto', sans-serif;
+          font-size: 80px;
         }
 
-          .button--divide {
-           background-color: $operator__button;
-           color: white;
-          }
+        .calculator__buttons {
+          display: grid;
+          grid-gap: 3vw;
+          row-gap: 6vh;
+          margin-bottom: 15vh;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(5, 1fr);
+          font-family: 'Open Sans', sans-serif;
 
-          .button--multiply {
-            background-color: $operator__button;
-            color: white;
-          }
+            .button {
+              display: flex;
+              font-size: 40px;
+              height: 8vh;
+              width: 8vh;
+              align-items: center;
+              justify-content: center;
+              transition: filter .3s;
+              background: $wrapper__buttons;
+              border-radius: 50%;
+              cursor: pointer;
+              border: 0;
+              box-shadow: none;
+              color: white;
+            }
 
-          .button--minus {
-            background-color: $operator__button;
-            color: white;
-          }
+            .button--divide {
+              background-color: $operator__button;
+              color: white;
+            }
 
-          .button--plus {
-            background-color: $operator__button;
-            color: white;
-          }
+            .button--multiply {
+              background-color: $operator__button;
+              color: white;
+            }
 
-          .button--equals {
-            background-color: $operator__button;
-            color: white;
-          }
+            .button--minus {
+              background-color: $operator__button;
+              color: white;
+            }
 
-          .zero {
-            grid-column: 1 / span 2;
-            width: 180px;
-            border-radius: 55px;
-            padding-left: 28px;
-            justify-content: flex-start;
-            color: white;
-          }
+            .button--plus {
+              background-color: $operator__button;
+              color: white;
+            }
 
-          .clear {
-            background-color: $function__button;
-            color: black;
-          }
+            .button--equals {
+              background-color: $operator__button;
+              color: white;
+            }
 
-          .plusminus {
-            background-color: $function__button;
-            color: black;
-          }
+            .zero {
+              grid-column: 1 / span 2;
+              width: 150px;
+              border-radius: 55px;
+              padding-left: 26px;
+              justify-content: flex-start;
+              color: white;
+            }
 
-          .percent {
-            background-color: $function__button;
-            color: black;
-          }
+            .clear {
+              background-color: $function__button;
+              color: black;
+            }
+
+            .plusminus {
+              background-color: $function__button;
+              color: black;
+            }
+
+            .percent {
+              background-color: $function__button;
+              color: black;
+            }
       }
 
       .calculator__bottom {
         width: 33%;
-        height: 4px;
+        height: 1vh;
         background: white;
         border-radius: 4px;
         bottom: 10px;
@@ -118,4 +119,4 @@
         position: absolute;
       }
     }
-}
+  }
